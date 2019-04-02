@@ -1,8 +1,13 @@
 function countByNumbers (countBy, countTo) {
   var outputString = "";
-  for (var index = countBy; index <= countTo; index += countBy) {
-    outputString += index + ", ";
-  };
+  if(countBy < countTo){
+
+    for (var index = countBy; index <= countTo; index += countBy) {
+      outputString += index + ", ";
+    };
+  } else{
+    outputString = "Count To must be greater than Count By!";
+  }
   return outputString;
 }
 
