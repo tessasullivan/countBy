@@ -11,7 +11,14 @@ $(function(){
     event.preventDefault();
     var countBy = parseInt($('#countBy').val());
     var countTo = parseInt($('#countTo').val());
-    var outputString = countByNumbers(countBy, countTo);
-    $('#output').append("<p>" + outputString + "</p>");
+
+    if (countBy && countTo) {
+      var outputString = countByNumbers(countBy, countTo);
+      $('#output').empty();
+      $('#output').append("<p>" + outputString + "</p>");
+
+    } else {
+      alert("Please enter values for both fields.");
+    }
   });
 });
